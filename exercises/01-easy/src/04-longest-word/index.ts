@@ -12,6 +12,26 @@
  * longestWord("fun&!! time") === "time"
  */
 
-function longestWord(sen: string) {}
+function longestWord(sen: string) {
+
+  var wordsSplitArray = sen
+    .replace(/[`~!@#$%^&*()_|+\=÷¿?;:'",.<>\{\}\[\]\\\/]/gi, "")
+    .split(/[ -]+/);
+  var wordLengthArray = [];
+
+  for (var i = 0; i < wordsSplitArray.length; i++) {
+    wordLengthArray.push(wordsSplitArray[i].length);
+  }
+  if (wordLengthArray == null || wordLengthArray.length == 0) {
+    return -1;
+  }
+
+  var indexOfLongestWord = wordLengthArray.indexOf(
+    Math.max(...wordLengthArray)
+  );
+
+  return wordsSplitArray[indexOfLongestWord];
+  
+}
 
 export { longestWord };

@@ -1,14 +1,32 @@
-export {};
+export { };
 
-function add() {}
+function add(num1: number, num2: number) {
+    return num1 + num2
+}
 
-function subtract() {}
+function subtract(num1: number, num2: number) {
+    return num1 - num2
+}
 
-function sum() {}
+function sum(sumArrayElements) {
+    let sumTotal = 0;
+    for (let num of sumArrayElements) {
+        sumTotal = sumTotal + num
+    }
+    return sumTotal
+}
 
-function multiply() {}
+function multiply(multiplyArrayElements) {
+    let multiTotal = 1;
+    for (var i = 0; i < multiplyArrayElements.length; i++) {
+        multiTotal = multiTotal * multiplyArrayElements[i]
+    }
+    return multiTotal
+}
 
-function power() {}
+function power(baseNumber, powerUp) {
+    return Math.pow(baseNumber, powerUp)
+}
 
 console.log(add(1, 2)); // Expected output: 3
 console.log(subtract(1, 2)); // Expected output: -1

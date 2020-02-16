@@ -1,4 +1,4 @@
-export {};
+export { };
 
 /**
  * Sales Tax
@@ -8,16 +8,20 @@ export {};
  */
 
 // You are allowed to change only this function
-function calculateSalesTax() {}
+function calculateSalesTax(price: number): number {
+    // return parseInt((price * 0.21).toFixed(2));
+    return price * 0.21;
+}
 
-const product = "You don't know JS";
-const price = 19.99;
+const product: string = "You don't know JS";
+const price: number = 19.99;
 const salesTax = calculateSalesTax(price);
+
 
 console.log("Product: " + product);
 console.log("Price: £" + price);
-console.log("Sales tax: £" + salesTax);
-console.log("Total: £" + (price + salesTax));
+console.log("Sales tax: £" + salesTax.toFixed(2));
+console.log("Total: £" + (price + salesTax).toFixed(2));
 
 /* Expected output:
 

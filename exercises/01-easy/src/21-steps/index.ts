@@ -19,6 +19,13 @@
  *            '####'
  */
 
-function steps(n: number) {}
+function steps(n: number) {
+    
+  for (var i = 1; i <= n; i++) {
+    var str = " ".repeat(n - i);
+    var str2 = "#".repeat(i);
+    console.log(str2 + str);
+  }
+}
 
 export { steps };

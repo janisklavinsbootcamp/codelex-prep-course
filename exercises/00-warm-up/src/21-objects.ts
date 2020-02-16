@@ -1,9 +1,11 @@
-export {};
+export { };
 
 /**
  * Loop over the array and for each alive writer print out the following:
  * "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
  */
+
+
 
 const writers = [
   {
@@ -35,3 +37,9 @@ const writers = [
     alive: true
   }
 ];
+
+for (let i = 0; i < writers.length; i++) {
+  if (writers[i].alive == true) {
+    console.log("Hi, my name is" + " " + writers[i].firstName + " " + writers[i].lastName)
+  }
+}

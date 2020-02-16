@@ -28,10 +28,45 @@
  */
 
 class PhoneNumber {
-  constructor(input: string) {}
+  input: string;
+  constructor(input: string) {
+    this.input = input;
+  }
 
   number() {
-    return "";
+    var cleanedUpInput: any = this.input.replace(/[,()-." "+]/g, "");
+
+    if (
+      cleanedUpInput.match(
+        /[а-яА-ЯЁёa-z:!?`~!@#$%^&*_|\=÷¿?;:'"<>\{\}\[\]\\\/]/i
+      ) ||
+      cleanedUpInput.length > 11 ||
+      cleanedUpInput.length < 10
+    ) {
+      return null;
+    } else if (
+      (cleanedUpInput.length === 10 && cleanedUpInput.charAt(3) === "1") ||
+      cleanedUpInput.charAt(3) === "0" ||
+      (cleanedUpInput.length === 10 && cleanedUpInput.charAt(0) === "1") ||
+      (cleanedUpInput.length === 10 && cleanedUpInput.charAt(0) === "0")
+    ) {
+      return null;
+    } else if (
+      (cleanedUpInput.length === 11 && cleanedUpInput.charAt(0) !== "1") ||
+      (cleanedUpInput.length === 11 && cleanedUpInput.charAt(4) === "0") ||
+      (cleanedUpInput.length === 11 && cleanedUpInput.charAt(4) === "1") ||
+      (cleanedUpInput.length === 11 && cleanedUpInput.charAt(1) === "1") ||
+      (cleanedUpInput.length === 11 && cleanedUpInput.charAt(1) === "0")
+    ) {
+      return null;
+    } else if (
+      cleanedUpInput.length === 11 &&
+      cleanedUpInput.charAt(0) === "1"
+    ) {
+      return cleanedUpInput.substring(1);
+    } else {
+      return cleanedUpInput;
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-export {};
+export { };
 
 /**
  * Currency Formatting
@@ -9,7 +9,12 @@ export {};
  */
 
 // You are allowed to change only this function
-function formatCurrency() {}
+function formatCurrency(price: number) {
+  let result = price.toFixed(2)
+  return `£${result}`;
+
+
+}
 
 function calculateSalesTax(price: number) {
   return price * 0.21;

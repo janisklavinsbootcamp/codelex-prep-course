@@ -1,4 +1,4 @@
-export {};
+export { };
 
 /**
  * Currency Formatting
@@ -10,14 +10,17 @@ export {};
  */
 
 // You are allowed to change this function
-function convertToUSD(price) {}
-// You are allowed to change this function
-function convertToBRL(price) {}
+
+
+function convert(price: number, rate: number) {
+    let fee = price * 0.01;
+    return (price * rate + fee).toFixed(2);
+}
 
 const product = "You don't know JS";
 const price = 12.5;
-const priceInUSD = convertToUSD(price);
-const priceInBRL = convertToBRL(price);
+const priceInUSD = convert(price, 1.4);
+const priceInBRL = convert(price, 5.5);
 
 console.log("Product: " + product);
 console.log("Price: $" + priceInUSD);

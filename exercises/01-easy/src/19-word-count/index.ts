@@ -10,7 +10,42 @@
  */
 
 class Words {
-  count(str: string) {}
+  str: string;
+
+  constructor() {
+    this.str = "";
+  }
+
+  count(str: string) {
+    var inputToArr: any = str
+      .toLowerCase()
+      .replace(/\s+/g, " ")
+      .replace("[\\t\\n\\r]+", " ")
+      .split(" ");
+    var ArrToObj: any = {};
+
+    for (var i = 0; i < inputToArr.length; i++) {
+      const index = inputToArr.indexOf("");
+      if (index > -1) {
+        inputToArr.splice(index, 1);
+      }
+    }
+
+    console.log(inputToArr);
+
+    for (var i = 0; i < inputToArr.length; i++) {
+      var character = inputToArr[i];
+      if (ArrToObj[character]) {
+        ArrToObj[character]++;
+      } else {
+        ArrToObj[character] = 1;
+      }
+    }
+
+
+    return ArrToObj;
+  }
+
 }
 
 export { Words };

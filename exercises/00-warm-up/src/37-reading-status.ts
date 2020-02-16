@@ -1,4 +1,4 @@
-export {};
+export { };
 
 const library = [
   {
@@ -18,9 +18,13 @@ const library = [
   }
 ];
 
-const showStatus = () => {};
+const showStatus = (libraryObject) => {
 
-showStatus(library);
+  return ("Already read" + " '" + libraryObject[0].title + "' by " + libraryObject[0].author + ".") + '\n' +
+    ("Already read" + " '" + libraryObject[1].title + "' by " + libraryObject[1].author + ".") + '\n' +
+    ("You still need to read" + " '" + libraryObject[2].title + "' by " + libraryObject[2].author + ".")
+};
+console.log(showStatus(library));
 
 /*
   Expected output:

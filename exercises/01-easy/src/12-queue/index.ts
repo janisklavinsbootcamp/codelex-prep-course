@@ -13,9 +13,18 @@
  */
 
 class Queue {
-  add(n: number) {}
+  data: number[];
 
-  remove() {}
+  constructor() {
+    this.data = [];
+  }
+
+  add(value: number) {
+    this.data.unshift(value);
+  }
+  remove() {
+    return this.data.pop();
+  }
 }
 
 export { Queue };

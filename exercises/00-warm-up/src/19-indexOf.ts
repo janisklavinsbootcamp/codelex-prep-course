@@ -1,4 +1,4 @@
-export {};
+export { };
 
 /**
  * Write a function that removes an element form array.
@@ -8,7 +8,13 @@ export {};
  */
 
 // You are allowed to edit only this function
-function remove(arr, valueToRemove) {}
+function remove(arr, valueToRemove) {
+  for (var i = arr.length; i--;) {
+    if (arr[i] === valueToRemove) 
+    arr.splice(i, 1);
+  }
+  return arr
+}
 
 const numbers = [1, 2, 3];
 const names = ["John", "Alice", "Ellen"];
@@ -19,9 +25,9 @@ const newNames = remove(names, "Ellen");
 console.log(newNumbers);
 console.log(newNames);
 
-/* 
+/*
   Expected output:
-  
+
       [1, 3]
       [John, Alice]
 */

@@ -5,22 +5,28 @@
  */
 
 class HighScores {
+
   scores: number[];
   constructor(scores: number[]) {
     this.scores = scores;
   }
 
   get latest() {
-    return 0;
+    return this.scores.pop();
   }
 
   get personalBest() {
-    return 0;
+    return Math.max.apply(null, this.scores);
   }
 
   get personalTopThree() {
-    return 0;
+    return this.scores
+      .sort(function(a, b) {
+        return b - a;
+      })
+      .slice(0, 3);
   }
+  
 }
 
 export { HighScores };

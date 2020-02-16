@@ -13,6 +13,23 @@
  * palindrome("abcdefg") === false
  */
 
-function palindrome(str: string) {}
+function palindrome(str: string) {
+
+  var singleChars = str.split("");
+  var backwardsStringArr = [];
+
+  for (var i = str.length - 1; i >= 0; i--) {
+    backwardsStringArr.push(singleChars[i]);
+  }
+  
+  var stringToBeChecked = backwardsStringArr.join().replace(/[,]/gi, "");
+  console.log(stringToBeChecked);
+  if (str === stringToBeChecked) {
+    return true;
+  } else {
+    return false;
+  }
+
+}
 
 export { palindrome };

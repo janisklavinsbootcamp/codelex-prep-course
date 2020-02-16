@@ -12,6 +12,33 @@
  * reverseInt(-90) === -9
  */
 
-function reverse(int: number) {}
+function reverse(int: number) {
+
+  var intToString = int.toString().split("");
+  var backwardsIntArr = [];
+
+  if (int > 0) {
+    for (var i = intToString.length - 1; i >= 0; i--) {
+      backwardsIntArr.push(intToString[i]);
+    }
+    var outputInt = backwardsIntArr
+      .join()
+      .replace(/[,]/gi, "")
+      .replace(/^0+/, "");
+    var output = parseInt(outputInt, 10);
+    return output;
+  } else {
+    backwardsIntArr.push(intToString[0]);
+    for (var i = intToString.length - 1; i > 0; i--) {
+      backwardsIntArr.push(intToString[i]);
+    }
+    var outputInt = backwardsIntArr
+      .join()
+      .replace(/[,]/gi, "")
+      .replace(/^0+/, "");
+    var output = parseInt(outputInt, 10);
+    return output;
+  }
+}
 
 export { reverse };
